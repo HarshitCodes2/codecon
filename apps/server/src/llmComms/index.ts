@@ -80,8 +80,7 @@ export const getLLMResponse = async (chatId: string, userRequest: string) => {
   // console.log(relevantHistory);
 
   if (!techInfoJson!.techStack || !techInfoJson!.techStackSetup) {
-    firstTimeLLMComms(chatId, userRequest);
-    return;
+    await firstTimeLLMComms(chatId, userRequest);
   }
 
   const techStack = techInfoJson!.techStack;
